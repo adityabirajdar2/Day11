@@ -21,19 +21,19 @@ public void addStudent(){
     System.out.println("Enter Rollno:");
     int rollno=sc.nextInt();
     if(!map.containsKey(rollno)){
-    System.out.println("Enter Name");
+    System.out.println("Enter Name of Student");
     obj.name=sc.next();
-    System.out.println("Enter place");
+    System.out.println("Enter place of Student");
     obj.place=sc.next();
-    System.out.println("Enter college");
+    System.out.println("Enter college of Student");
     obj.college=sc.next();
-    System.out.println("Enter Branch");
+    System.out.println("Enter Branch of Student");
     obj.branch=sc.next();
     
     map.put(rollno,obj);
     }
     else{
-        System.out.println("Roll No is already taken!\n");
+        System.out.println("Use another Rollno which doesn't exit in our database:\n");
     }
     }
     //for (Map.Entry<Integer, String> m : map.entrySet()) {
@@ -45,9 +45,9 @@ void delete(){
     System.out.print("Enter the roll no: ");
         int rollno = sc.nextInt();
         if (map.remove(rollno)!=null) {
-            System.out.printf("RollNo %d data is deleted.\n",rollno);
+            System.out.printf("You deleted rollno:%d\n",rollno);
         } else {
-            System.out.println("Roll number dosent exist .");
+            System.out.println("Roll number dosent exist in our data .");
         }
     }
 
@@ -56,7 +56,7 @@ public void searchStudent() {
     System.out.print("\nEnter the roll no: you want to search ");
     int rollno = sc.nextInt();
     if (map.isEmpty()) {
-        System.out.println("No Students Add Students:");
+        System.out.println("No Students in data please Add Students:");
     }
     if (map.containsKey(rollno)) {
         System.out.println("\nName: "+ map.get(rollno).name);
@@ -64,13 +64,13 @@ public void searchStudent() {
         System.out.println("Place: "+ map.get(rollno).place);
         System.out.println("Branch: "+ map.get(rollno).branch + "\n");
     } else {
-        System.out.println("Roll number dosent exist!");
+        System.out.println("Roll number dosent exist in our database");
     }
 }
 
 public void display(){
     if (map.isEmpty()) {
-        System.out.println("Empty\n");
+        System.out.println("It'sEmpty , Enter Data First\n");
     }
     else{
         System.out.println("\nStudent Details:");
