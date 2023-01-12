@@ -73,6 +73,8 @@ public void display(){
         System.out.println("It'sEmpty , Enter Data First\n");
     }
     else{
+         //for (Map.Entry<Integer, String> m : map.entrySet()) {
+      //  System.out.println(m.getKey() + " " + m.getValue());}
         System.out.println("\nStudent Details:");
         for (Entry<Integer, Studentclass> m : map.entrySet()) {
             System.out.println("Roll No: "+m.getKey());
