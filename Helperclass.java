@@ -8,7 +8,7 @@ import java.util.Map.Entry;
 import MultipleInheritance.student;
 
 public class Helperclass extends Studentclass {
-    Helperclass arrayStudent[];
+    
     HashMap<Integer,Studentclass> map=new HashMap<Integer,Studentclass>();
     Scanner sc=new Scanner(System.in);
 
