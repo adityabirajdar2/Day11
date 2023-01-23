@@ -104,6 +104,53 @@ class DATABASECONN {
         }
 
     }
+
+    fun truncatetable() {
+        var prep: PreparedStatement? = null;
+        var sql = "TRUNCATE table Demo10;"
+        try {
+            prep = conn!!.prepareStatement(sql);
+            var status = prep.executeUpdate();
+            if (status == 0) {
+                print("TABLE TRUNCATED")
+            }
+        } catch (e: SQLException) {
+            println(e)
+        }
+    }
+
+    fun drop(){
+        var prep:PreparedStatement?=null;
+        var sql ="Drop table Demo10;"
+        try {
+            prep=conn!!.prepareStatement(sql);
+            var status=prep.executeUpdate();
+            if (status==0){
+                print("TABLE DELETED")
+            }
+        }catch (e:SQLException){
+            println(e)
+        }
+
+    }
+    fun Update(){
+        var prep:PreparedStatement?=null;
+        var sql="update demo10 SET name=? where id =?";
+        try {
+            prep=conn!!.prepareStatement(sql)
+            var name= readLine()
+            prep.setString(1,name)
+            var id= readLine()!!.toInt()
+            prep.setInt(2,id)
+           var status= prep.executeUpdate()
+            if(status>0){
+                print("UPDATED")
+            }
+        }catch (e:SQLException){
+            println(e)
+
+        }
+    }
     fun executeQueuriesofDatabase(){
         var stm:Statement?=null;
         var sql="show tables;"
@@ -136,6 +183,11 @@ fun main(){
     jdbcobj.createconnection();
     //jdbcobj.selectqurey();
     //jdbcobj.createtable();
-    jdbcobj.createtableusingstatement();
-    jdbcobj.insertdata();
+    //jdbcobj.createtableusingstatement();
+    //jdbcobj.insertdata();
+    //jdbcobj.Update()
+    //jdbcobj.drop();
+    jdbcobj.truncatetable()
+
+
 }
